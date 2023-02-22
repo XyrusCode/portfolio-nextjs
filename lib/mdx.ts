@@ -6,6 +6,7 @@ import rehypeCodeTitles from 'rehype-code-titles';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrism from 'rehype-prism-plus';
 
+// @ts-ignore
 export async function mdxToHtml(source) {
   const mdxSource = await serialize(source, {
     mdxOptions: {
@@ -28,6 +29,7 @@ export async function mdxToHtml(source) {
   });
 
   const tweetMatches = source.match(/<StaticTweet\sid="[0-9]+"\s\/>/g);
+    // @ts-ignore
   const tweetIDs = tweetMatches?.map((tweet) => tweet.match(/[0-9]+/g)[0]);
 
   return {
