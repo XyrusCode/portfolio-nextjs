@@ -33,6 +33,7 @@ export async function getServerSideProps({ res }: any) {
     'Cache-Control',
     'public, s-maxage=1200, stale-while-revalidate=600'
   );
+    // @ts-ignore
   res.write(createSitemap(allPages));
   res.end();
 

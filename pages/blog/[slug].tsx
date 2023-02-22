@@ -8,6 +8,7 @@ import { mdxToHtml } from 'lib/mdx';
 import { Post } from 'lib/types';
 
 const PostPage = ({ post }: { post: Post }) => {
+    // @ts-ignore
   const StaticTweet = ({ id }) => {
     const tweet = post.tweets.find((tweet) => tweet.id === id);
     return <Tweet {...tweet} />;
@@ -29,13 +30,16 @@ const PostPage = ({ post }: { post: Post }) => {
 }
 
 export async function getStaticPaths() {
+    // @ts-ignore
   const paths = [];
   return {
+      // @ts-ignore
     paths: paths.map((slug) => ({ params: { slug } })),
     fallback: 'blocking'
   };
 }
 
+  // @ts-ignore
 export async function getStaticProps({ params, preview = false }) {
   // const { post } = await getClient(preview).fetch(postQuery, {
   //   slug: params.slug

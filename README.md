@@ -23,7 +23,7 @@
 This application requires Node.js v16.13+.
 
 ```bash
-git clone https://github.com/XyrusCode/nextjs-portfolio.git
+git clone https://github.com/XyrusCode/portfolio-nextjs.git
 cd portfolio
 npm install
 npm run dev
