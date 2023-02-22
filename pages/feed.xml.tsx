@@ -34,3 +34,5 @@ export const getServerSideProps = async({ res }: any) => {
 const RSSFeed = () => {
   return null;
 }
+
+export default RSSFeed;
