@@ -14,13 +14,16 @@ const SnippetsPage = ({ snippet }: { snippet: Snippet }) =>  {
 }
 
 export const getStaticPaths = async () => {
+    // @ts-ignore
   const paths = [];
   return {
+      // @ts-ignore
     paths: paths.map((slug) => ({ params: { slug } })),
     fallback: 'blocking'
   };
 }
 
+  // @ts-ignore
 export const getStaticProps= async ({ params, preview = false }) => {
   const snippet  = {};
   // await getClient(preview).fetch(snippetsQuery, {

@@ -35,10 +35,10 @@ const Home = () => {
           </div>
 
           <h3 className="pt-5 font-bold text-2xl md:text-4xl tracking-tight text-black dark:text-white">
-            This is under construction. I'm currently experimenting with a lot of stuff for this so it might take a while. 
+            This is under construction. I`&apos;`m currently experimenting with a lot of stuff for this so it might take a while. 
           </h3>
           <h3 className="pt-5 font-bold text-2xl md:text-4xl tracking-tight mb-6 text-black dark:text-white">
-            There are supposed to be posts from my Hashnode blog under here but seeing as I haven't written any posts yet and I haven't quite figured out their API I'm just going to leave it blank.  but you can check out my recent projects below. 👇
+            There are supposed to be posts from my Hashnode blog under here but seeing as I haven`&apos;`t written any posts yet and I haven`&apos;`t quite figured out their API I`&apos;`m just going to leave it blank.  but you can check out my recent projects below. 👇
           </h3>
           {/* <div className="flex gap-6 flex-row md:flex-row">
             <ProjectCard

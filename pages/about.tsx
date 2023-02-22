@@ -31,23 +31,23 @@ const About = () => {
           <div className='pb-2'>
           <h3>Stuff About me</h3>
           <p>
-          I'm a Full Stack Engineer at{' '}
+          I`&apos;`m a Full Stack Engineer at{' '}
             <a href="https://epoh.ng/register?referral_code=937BBB62">Epoh Music</a>. I spent for years in the university to get a B.S. in
-            Computer Science and then went to Youtube to learn how to code. Don't look at me like that, it's my website and I'll write what I want to here.
+            Computer Science and then went to Youtube to learn how to code. Don`&apos;`t look at me like that, it`&apos;`s my website and I`&apos;`ll write what I want to here.
           </p>
           </div>
 
           <div className='pb-2'>
           <h3>Experience</h3>
           <p>
-            Let's see, I worked as an IT manager for about a year, fixing PCs and printers aroud the office. After that I got hired as my current position.
+            Let`&apos;`s see, I worked as an IT manager for about a year, fixing PCs and printers aroud the office. After that I got hired as my current position.
           </p>
           </div>
 
           <div className='pb-2'>
           <h3>Stack</h3>
           <p>
-            On the web I have experience using Wordpress, Wix, Webflow React.js, Next.js. For mobile development, I've used Java (this was back when Android Studio used it), Kotlin, Xamarin framework. I keep saying I'll learn React Native but I haven't gotten around to it. 
+            On the web I have experience using Wordpress, Wix, Webflow React.js, Next.js. For mobile development, I`&apos;`ve used Java (this was back when Android Studio used it), Kotlin, Xamarin framework. I keep saying I`&apos;`ll learn React Native but I haven`&apos;`t gotten around to it. 
             These days I code mostly in Typescript and PHP but I also know c#, Python and FORTRAN. Yes that FORTRAN. 
           </p>
           </div>

@@ -53,6 +53,7 @@ export const getTweets = async (ids: any[]) => {
           tweet?.attachments?.media_keys.map((key: any) =>
             tweets.includes.media.find((media: { media_key: any; }) => media.media_key === key)
           ) || [],
+            // @ts-ignore
         referenced_tweets: getReferencedTweets(tweet),
         author: getAuthorInfo(tweet.author_id)
       };
