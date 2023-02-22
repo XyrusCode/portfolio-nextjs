@@ -1,28 +1,34 @@
-# Next.js + Tailwind CSS Example
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%xyruscode%2Fnextjs-portfolio)
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.2)](https://tailwindcss.com/blog/tailwindcss-v3-2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+# xyruscode.com
 
-## Deploy your own
+- **Framework**: [Next.js](https://nextjs.org/)
+- **Blog**: [Hashnode](https://hasnode.com)
+- **Deployment**: [Vercel](https://vercel.com)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+## Overview
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+- `layouts/*` - The different page layouts each MDX category (blog, snippets) uses.
+- `lib/*` - Short for "library", a collection of helpful utilities or code for external services.
+- `pages/api/*` - [API Routes](https://nextjs.org/docs/api-routes/introduction) 
+- `pages/sitemap.xml.tsx` - Automatically generated sitemap.
+- `pages/feed.xml.tsx` - Automatically generated RSS feed.
+- `pages/*` - All other static pages.
+- `public/*` - Static assets including fonts and images.
+- `styles/*` - A small amount of global styles. I'm mostly using vanilla Tailwind CSS.
 
-## How to use
+## Running Locally
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+This application requires Node.js v16.13+.
 
 ```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
+git clone https://github.com/XyrusCode/nextjs-portfolio.git
+cd portfolio
+pnpm install
+pnpm dev
 ```
 
-```bash
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
+## Cloning / Forking
 
-```bash
-pnpm create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
-# portfolio-nextjs
+Please review the [license](https://github.com/XyrusCode/nextjs-portfolio/blob/main/LICENSE.txt) and remove all of my personal information (resume, blog posts, images, etc.).
