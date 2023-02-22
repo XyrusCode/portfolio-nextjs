@@ -25,8 +25,8 @@ This application requires Node.js v16.13+.
 ```bash
 git clone https://github.com/XyrusCode/nextjs-portfolio.git
 cd portfolio
-pnpm install
-pnpm dev
+npm install
+npm run dev
 ```
 
 ## Cloning / Forking
