@@ -3,7 +3,7 @@
 # xyruscode.com
 
 - **Framework**: [Next.js](https://nextjs.org/)
-- **Blog**: [Hashnode](https://hasnode.com)
+- **Blog**: [Hashnode](https://hasnode.com) pending when I grasp their API
 - **Deployment**: [Vercel](https://vercel.com)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 
