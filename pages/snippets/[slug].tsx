@@ -44,4 +44,6 @@ export const getStaticProps= async ({ params, preview = false }) => {
       }
     }
   };
-}
+};
+
+export default SnippetsPage;
