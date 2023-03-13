@@ -1,7 +1,12 @@
 /**
  * @type {import('next').NextConfig}
  */
-module.exports = {
+
+const withPWA = require('next-pwa')({
+  dest: 'public'
+});
+
+module.exports = withPWA({
   reactStrictMode: true,
   images: {
     domains: [
@@ -23,7 +28,7 @@ module.exports = {
       }
     ];
   }
-};
+});
 
 // https://nextjs.org/docs/advanced-features/security-headers
 const ContentSecurityPolicy = `
