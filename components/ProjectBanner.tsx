@@ -31,13 +31,13 @@ const ProjectBanner = ({ title, description, imgSrc, href }: any) => {
           />
         ))}
       <div className="p-6">
-        <h2 className="mb-3 text-2xl font-bold leading-8 tracking-tight">
+        <h2 className="mb-3 text-2xl font-bold leading-8 tracking-tight text-gray-900 dark:text-gray-100">
           {href ? (
             <Link href={href} title={`Link to ${title}`}>
               {title}
             </Link>
           ) : (
-            title
+          title
           )}
         </h2>
         <p className="prose mb-3 max-w-none text-gray-500 dark:text-gray-400">{description}</p>
@@ -45,7 +45,7 @@ const ProjectBanner = ({ title, description, imgSrc, href }: any) => {
           <Link
             href={href}
             target='new-tab'
-            className="text-base font-medium leading-6 text-black hover:text-green dark:hover:text-primary-400"
+            className="text-base font-medium leading-6 text-black hover:text-green dark:hover:text-gray-400"
             aria-label={`Link to ${title}`}
           >
             Learn more &rarr;
