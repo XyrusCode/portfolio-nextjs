@@ -8,7 +8,7 @@ const interVariable = Inter();
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return(
-    <ThemeProvider defaultTheme="light" attribute="class">
+    <ThemeProvider defaultTheme="dark" attribute="class">
      <main className={interVariable.className}>
      <Component {...pageProps} />
      <Analytics />
