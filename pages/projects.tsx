@@ -47,7 +47,7 @@ const projectsData = [
       description: `A store for a mushroom farm in Nigeria. 
       Built with WordPress and Elementor.`,
       imgSrc: '/projects/moli.png',
-      href: 'https://www.milifoods.com/',
+      href: 'https://www.molifoods.com/',
     }
   ];
 
