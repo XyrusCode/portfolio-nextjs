@@ -12,7 +12,7 @@ const Uses = () => {
           My Gear
         </h1>
         <p className="text-gray-700 dark:text-gray-300 mt-2 mb-8">
-          Here`&apos;`s what tech I`&apos;`m currently using for coding, videos, and music.
+          Here&apos;s what tech I&apos;m currently using for coding, videos, and music.
           Most of these have been accumulated over the past few years, with a
           recent office upgrade in 2020.
         </p>
