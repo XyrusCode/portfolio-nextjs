@@ -27,12 +27,11 @@ const About = () => {
           </ul>
           <h2>Bio</h2>
           <h3>Job Title</h3>
-          <p>Prince Shammah, Full Stack Engineer @ Epoh Music</p>
+          <p>Prince Shammah, Freelance Web Developer</p>
           <div className='pb-2'>
           <h3>Stuff About me</h3>
           <p>
-          I&apos;m a Full Stack Engineer at{' '}
-            <a href="https://epoh.ng/register?referral_code=937BBB62">Epoh Music</a>. I spent four years in the university to get a B.S. in
+          I&apos;m a Freelance Web Debeloper based in Nigeria. I spent four years in the university to get a B.S. in
             Computer Science and then went to Youtube to learn how to code. Don&apos;t look at me like that, it&apos;s my website and I&apos;ll write what I want to here. One of these days I&apos;ll go on a rant and it will not be pretty.
           </p>
           </div>
@@ -40,8 +39,10 @@ const About = () => {
           <div className='pb-2'>
           <h3>Experience</h3>
           <p>
-            Let&apos;s see, I worked as an IT manager for about a year, fixing PCs and printers around the office. After that I got hired at my current position. I&apos;ve been there for about a year and a half now. 
-          </p>
+            Let&apos;s see, I worked as an IT manager for about a 16 months, fixing PCs and printers around the office. After that I worked as a Junior Software Engineer at{' '}
+            <a href="https://epoh.ng/register?referral_code=937BBB62">Epoh Music</a> 
+            </p>
+            <p>I&apos;m currently a freelancer at the moment. I&apos;m spending most of my time now learning new stuff. Just might build clones of all of FAANG while Im sitting around.</p>
           </div>
 
           <div className='pb-2'>

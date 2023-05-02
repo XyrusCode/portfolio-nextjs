@@ -17,8 +17,7 @@ const Home = () => {
                 Prince Shammah
               </h1>
               <h2 className="text-gray-700 dark:text-gray-200 mb-4">
-              Full Stack Engineer at{' '}
-            <a href="https://epoh.ng/register?referral_code=937BBB62">Epoh Music</a>
+              Full Stack Engineer
               </h2>
             </div>
             <div className="w-[80px] sm:w-[176px] relative mb-8 sm:mb-0 mr-auto">
