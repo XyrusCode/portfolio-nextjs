@@ -80,7 +80,7 @@ const Container = (props: any) => {
             <NavItem href="/" text="Home" />
             <NavItem href="/about" text="About" />
             <NavItem href="/projects" text="Projects" />
-            <NavItem href="https://showwcase.xyruscode.com.ng.ng" text="Showwcase" />
+            <NavItem href="https://showwcase.xyruscode.com.ng" text="Showwcase" />
             <NavItem href="https://blog.xyruscode.com.ng" text="Blog" />
           </div>
           <button
