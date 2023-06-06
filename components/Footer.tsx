@@ -22,7 +22,7 @@ const Footer = () =>  {
             About
           </Link>
           <Link
-            href="https://blog.xyruscode.com"
+            href="https://blog.xyruscode.com.ng"
             className="text-gray-500 hover:text-gray-600 transition"
           >
             Blog

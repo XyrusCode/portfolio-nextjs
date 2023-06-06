@@ -42,13 +42,13 @@ const Home = () => {
           {/* <div className="flex gap-6 flex-row md:flex-row">
             <ProjectCard
               title="Xyrus&apos; Movie Database"
-              link="https://movie.xyruscode.com"
+              link="https://movie.xyruscode.com.ng"
               gradient="from-[#D8B4FE] to-[#818CF8]"
               image={"/projects/xmdb.png"}
             />
             <ProjectCard
               title="Xyrus&apos; Music"
-              link="https://movie.xyruscode.com"
+              link="https://movie.xyruscode.com.ng"
               gradient="from-[#D8B4FE] to-[#818CF8]"
               image={"/projects/xmdb.png"}
             />

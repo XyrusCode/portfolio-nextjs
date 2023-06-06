@@ -31,7 +31,7 @@ const About = () => {
           <div className='pb-2'>
           <h3>Stuff About me</h3>
           <p>
-          I&apos;m a Freelance Web Debeloper based in Nigeria. I spent four years in the university to get a B.S. in
+          I&apos;m a Freelance Web Developer based in Nigeria. I spent four years in the university to get a B.S. in
             Computer Science and then went to Youtube to learn how to code. Don&apos;t look at me like that, it&apos;s my website and I&apos;ll write what I want to here. One of these days I&apos;ll go on a rant and it will not be pretty.
           </p>
           </div>
