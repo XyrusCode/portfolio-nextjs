@@ -53,7 +53,7 @@ const BlogLayout = ({
           {/* <div className="text-sm text-gray-700 dark:text-gray-300">
             <a
               href={`https://mobile.twitter.com/search?q=${encodeURIComponent(
-                `https://xyruscode.com/blog/${post.slug}`
+                `https://xyruscode.com.ng/blog/${post.slug}`
               )}`}
               target="_blank"
               rel="noopener noreferrer"
@@ -62,7 +62,7 @@ const BlogLayout = ({
             </a>
             {` • `}
             <a
-              href="https://github.com/xyruscode.com/issues"
+              href="https://github.com/xyruscode.com.ng/issues"
               target="_blank"
               rel="noopener noreferrer"
             >

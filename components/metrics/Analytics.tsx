@@ -8,7 +8,7 @@ const AnalyticsCard = () => {
   const { data } = useSWR<Views>('/api/views', fetcher);
 
   const pageViews = new Number(data?.total);
-  const link = 'https://xyruscode.com';
+  const link = 'https://xyruscode.com.ng';
 
   return (
     <MetricCard

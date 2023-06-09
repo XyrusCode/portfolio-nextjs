@@ -43,7 +43,7 @@ const Container = (props: any) => {
   const meta = {
     title: 'Prince Shammah – Developer.',
     description: `Full stack developer, JavaScript enthusiast.`,
-    image: 'https://www.xyruscode.com.ng/xyrus.png',
+    image: 'https://www.xyruscode.com.ng.ng/xyrus.png',
     type: 'website',
     ...customMeta
   };
@@ -54,8 +54,8 @@ const Container = (props: any) => {
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
         <meta content={meta.description} name="description" />
-        <meta property="og:url" content={`https://www.xyruscode.com.ng${router.asPath}`} />
-        <link rel="canonical" href={`https://xyruscode.com${router.asPath}`} />
+        <meta property="og:url" content={`https://www.xyruscode.com.ng.ng${router.asPath}`} />
+        <link rel="canonical" href={`https://xyruscode.com.ng${router.asPath}`} />
         <meta property="og:type" content={meta.type} />
         <meta property="og:site_name" content="Prince Shammah" />
         <meta property="og:description" content={meta.description} />
@@ -80,8 +80,8 @@ const Container = (props: any) => {
             <NavItem href="/" text="Home" />
             <NavItem href="/about" text="About" />
             <NavItem href="/projects" text="Projects" />
-            <NavItem href="https://showwcase.xyruscode.com.ng" text="Showwcase" />
-            <NavItem href="https://blog.xyruscode.com.ng" text="Blog" />
+            <NavItem href="https://showwcase.xyruscode.com.ng.ng" text="Showwcase" />
+            <NavItem href="https://blog.xyruscode.com.ng.ng" text="Blog" />
           </div>
           <button
             aria-label="Toggle Dark Mode"

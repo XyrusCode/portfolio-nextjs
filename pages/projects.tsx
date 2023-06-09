@@ -6,7 +6,7 @@ const projectsData = [
       title: 'Xyrus Movie Database',
       description: `Are you a movie freak? Do you want to know what the hotest and latest movies right now are? Head on down to XMDB and check them out for yourself. Built with React, Styled Components, and TMDB API and is deployed on Netlify.`,
       imgSrc: '/projects/xmdb.PNG',
-      href: 'https://movie.xyruscode.com.ng',
+      href: 'https://movie.xyruscode.com.ng.ng',
     },
     {
       title: 'First Class Barbers',

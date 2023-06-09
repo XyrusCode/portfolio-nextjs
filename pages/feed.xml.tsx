@@ -4,15 +4,15 @@ import { indexQuery } from 'lib/queries';
 export const getServerSideProps = async({ res }: any) => {
   const feed = new RSS({
     title: 'Prince Shammah',
-    site_url: 'https://xyruscode.com',
-    feed_url: 'https://xyruscode.com/feed.xml'
+    site_url: 'https://xyruscode.com.ng',
+    feed_url: 'https://xyruscode.com.ng/feed.xml'
   });
 
   const allPosts: any = [];
   allPosts.map((post: { title: any; slug: any; date: any; excerpt: any; }) => {
     feed.item({
       title: post.title,
-      url: `https://xyruscode.com/blog/${post.slug}`,
+      url: `https://xyruscode.com.ng/blog/${post.slug}`,
       date: post.date,
       description: post.excerpt
     });

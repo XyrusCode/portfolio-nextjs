@@ -1,6 +1,6 @@
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%xyruscode%2Fnextjs-portfolio)
 
-# xyruscode.com
+# xyruscode.com.ng
 
 - **Framework**: [Next.js](https://nextjs.org/)
 - **Blog**: [Hashnode](https://hasnode.com) pending when I grasp their API

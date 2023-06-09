@@ -6,7 +6,7 @@ const createSitemap = (slugs: [any]) => `<?xml version="1.0" encoding="UTF-8"?>
           .map((slug) => {
             return `
                 <url>
-                    <loc>${`https://xyruscode.com/${slug}`}</loc>
+                    <loc>${`https://xyruscode.com.ng/${slug}`}</loc>
                 </url>
             `;
           })
