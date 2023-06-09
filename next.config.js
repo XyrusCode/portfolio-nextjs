@@ -1,24 +1,42 @@
+// @ts-check
+const withOffline = require('next-offline')
+
 /**
  * @type {import('next').NextConfig}
  */
 
-const withPWA = require('next-pwa')({
-  dest: 'public'
-});
-
-module.exports = withPWA({
+const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: [
       'i.scdn.co', // Spotify Album Art
       'pbs.twimg.com', // Twitter Profile Picture
-      'cdn.sanity.io'
+      'cdn.hashnode.com', // Hashnode Images
+      
     ]
   },
   experimental: {
     fontLoaders: [
       { loader: '@next/font/google', options: { subsets: ['latin'] } }
-    ]
+    ],
+    mdxRs: true,
+  },
+  workboxOpts: {
+    swDest: process.env.NEXT_EXPORT
+      ? 'service-worker.js'
+      : 'static/service-worker.js',
+    runtimeCaching: [
+      {
+        urlPattern: /^https?.*/,
+        handler: 'NetworkFirst',
+        options: {
+          cacheName: 'offlineCache',
+          expiration: {
+            maxEntries: 200,
+          },
+        },
+      },
+    ],
   },
   async headers() {
     return [
@@ -27,19 +45,28 @@ module.exports = withPWA({
         headers: securityHeaders
       }
     ];
-  }
-});
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/service-worker.js',
+        destination: '/_next/static/service-worker.js',
+      },
+    ]
+  },
+}
+
+module.exports = withOffline(nextConfig);
 
 // https://nextjs.org/docs/advanced-features/security-headers
 const ContentSecurityPolicy = `
-    default-src 'self';
-    script-src 'self' 'unsafe-eval' 'unsafe-inline' *.youtube.com *.twitter.com;
-    child-src *.youtube.com *.google.com *.twitter.com;
-    style-src 'self' 'unsafe-inline' *.googleapis.com;
-    img-src * blob: data:;
-    media-src 'none';
-    connect-src *;
-    font-src 'self';
+default-src 'self' vercel.live;
+script-src 'self' 'unsafe-eval' 'unsafe-inline' cdn.vercel-insights.com vercel.live;
+style-src 'self' 'unsafe-inline';
+img-src * blob: data:;
+media-src 'none';
+connect-src *;
+font-src 'self';
 `;
 
 const securityHeaders = [

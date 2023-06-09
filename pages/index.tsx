@@ -1,12 +1,18 @@
 import { Suspense } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-
+import { getHashnodePosts } from 'lib/queries';
+import type { Post } from 'types/posts';
+// Custom components
 import Container from '../components/Container';
 // import ProjectCard from '../components/ProjectCard';
-// import BlogPostCard from '../components/BlogPostCard';
+import BlogPostCard from '../components/BlogPostCard';
 
-const Home = () => {
+type Props = {
+  posts: Post[]
+};
+
+const Home = ({posts}: Props) => {
   return (
     <Suspense fallback={null}>
       <Container>
@@ -33,12 +39,28 @@ const Home = () => {
             </div>
           </div>
 
-          <h3 className="pt-5 font-bold text-2xl md:text-4xl tracking-tight text-black dark:text-white">
-            This is under construction. I&apos;m currently experimenting with a lot of stuff for this so it might take a while. 
+          <p className="pt-5 font-bold text-lg md:text-3xl tracking-tight text-black dark:text-white">
+            Welcome to my site. It&apos;s under construction but ont like a brand new building but more like a complete building that&apos;s getting improvements. I&apos;m currently experimenting with a lot of stuff like Spotify and Hashnode&apos;s API for this so it might take a while. 
+            This runs on Next.js, is being deployed from Vercel and served via Cloudflare. 
+          </p>
+          <h3 className="pt-7 font-bold text-2xl md:text-4xl tracking-tight mb-6 text-black dark:text-white">
+            Recent Posts
           </h3>
-          <h3 className="pt-5 font-bold text-2xl md:text-4xl tracking-tight mb-6 text-black dark:text-white">
-            There are supposed to be posts from my Hashnode blog under here but seeing as I haven&apos;t written any posts yet and I haven&apos;t quite figured out their API I&apos;m just going to leave it blank.  but you can check out my recent projects below. 👇
-          </h3>
+
+          {posts.map((post) => {
+  return (
+    <BlogPostCard 
+    _id={post._id}
+    key={post._id}
+    title={post.title}
+    slug={post.slug}
+    totalReactions={post.totalReactions}
+    gradient="from-[#D8B4FE] to-[#818CF8]"
+    />
+  )
+})}
+
+
           {/* <div className="flex gap-6 flex-row md:flex-row">
             <ProjectCard
               title="Xyrus&apos; Movie Database"
@@ -83,3 +105,13 @@ const Home = () => {
 }
 
 export default Home;
+
+export async function getStaticProps() {
+  const posts = await getHashnodePosts();
+
+  return {
+    props: {
+      posts,
+    },
+  }
+};

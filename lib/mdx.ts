@@ -5,9 +5,10 @@ import rehypeSlug from 'rehype-slug';
 import rehypeCodeTitles from 'rehype-code-titles';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrism from 'rehype-prism-plus';
+import marked from 'marked';
 
 // @ts-ignore
-export async function mdxToHtml(source) {
+export async function mdToHtml(source) {
   const mdxSource = await serialize(source, {
     mdxOptions: {
       remarkPlugins: [remarkGfm],
@@ -39,3 +40,7 @@ export async function mdxToHtml(source) {
     readingTime: readingTime(source).text
   };
 }
+
+export const convertMarkdownToHtml = (markdown: string) => {
+  return marked.marked.parse(markdown);
+};

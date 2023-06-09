@@ -7,13 +7,13 @@ import { Views } from 'lib/types';
 type Props ={
   slug: string;
   title: string;
-  excerpt: string;
+  brief: string;
 }
 
 const BlogPost = ({
   slug,
   title,
-  excerpt
+  brief
 }: Props) => {
   const { data } = useSWR<Views>(`/api/views/${slug}`, fetcher);
   const views = data?.total;
@@ -29,7 +29,7 @@ const BlogPost = ({
             {`${views ? new Number(views).toLocaleString() : '–––'} views`}
           </p>
         </div>
-        <p className="text-gray-600 dark:text-gray-400">{excerpt}</p>
+        <p className="text-gray-600 dark:text-gray-400">{brief}</p>
       </div>
     </Link>
   );

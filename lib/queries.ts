@@ -1,3 +1,73 @@
+import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
+import { Post } from 'types/posts';
+
+const client = new ApolloClient({
+  uri: 'https://api.hashnode.com/',
+  cache: new InMemoryCache(),
+});
+
+
+export async function getHashnodePosts() {
+
+  const { data } = await client.query({
+    query: gql`
+      query GetPosts {
+        user(username: "xyruscode") {
+          publication {
+            posts(page: 0) {
+              _id
+              coverImage
+              slug
+              title
+              brief
+              totalReactions
+            }
+          }
+        }
+      }
+    `,
+  })
+
+  return data.user?.publication?.posts ?? [];
+}
+
+export const fetchAllPostSlugs = async () => {
+  try {
+    const result = await getHashnodePosts();
+
+    return result.map((post: { slug: any; }) => post.slug);
+  } catch (error) {
+    throw new Error('Failed to fetch post slugs from hashnode');
+  }
+};
+
+export const getHashnodePostsBySlug = async (slug: string) => {
+    const { data } = await client.query({
+      query: gql`
+      query GetPost($slug: String!) {
+        post(slug: $slug, hostname: "") {
+          _id
+          coverImage
+          dateAdded
+          slug
+          title
+          brief
+          replyCount
+          totalReactions
+          content
+        }
+      }
+      `,
+      variables:{
+        slug: slug
+      }
+    })
+
+    return data?.post;
+};
+
+
+
 const postFields = `
   _id,
   title,

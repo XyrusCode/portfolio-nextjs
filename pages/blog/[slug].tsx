@@ -1,70 +1,62 @@
-import { MDXRemote } from 'next-mdx-remote';
+// import { MDXRemote } from 'next-mdx-remote';
 import BlogLayout from 'layouts/blog';
 import Tweet from 'components/Tweet';
 import components from 'components/MDXComponents';
-import { postQuery, postSlugsQuery } from 'lib/queries';
-import { getTweets } from 'lib/twitter';
-import { mdxToHtml } from 'lib/mdx';
-import { Post } from 'lib/types';
+import { getHashnodePostsBySlug, fetchAllPostSlugs } from 'lib/queries';
+// import { getTweets } from 'lib/twitter';
+import { mdToHtml } from 'lib/mdx';
+import { Post } from 'types/posts'
 
 const PostPage = ({ post }: { post: Post }) => {
-    // @ts-ignore
-  const StaticTweet = ({ id }) => {
-    const tweet = post.tweets.find((tweet) => tweet.id === id);
-    return <Tweet {...tweet} />;
-  };
+  // const StaticTweet = ({ id }) => {
+  //   const tweet = post.tweets.find((tweet) => tweet.id === id);
+  //   return <Tweet {...tweet} />;
+  // };
 
   return (
-    <BlogLayout post={post}>
-      <MDXRemote
-        {...post.content}
-        components={
-          {
-            ...components,
-            StaticTweet
-          } as any
-        }
-      />
-    </BlogLayout>
+    <BlogLayout post={post}/>
   );
 }
 
-export async function getStaticPaths() {
-    // @ts-ignore
-  const paths = [];
-  return {
-      // @ts-ignore
-    paths: paths.map((slug) => ({ params: { slug } })),
-    fallback: 'blocking'
+export default PostPage;
+
+
+type Params = {
+  params: {
+    slug: string,
   };
+  preview: boolean;
 }
 
-  // @ts-ignore
-export async function getStaticProps({ params, preview = false }) {
-  // const { post } = await getClient(preview).fetch(postQuery, {
-  //   slug: params.slug
-  // });
-
-  const post ={};
+export async function getStaticProps({ params, preview = false }: Params) {
+  const post = await getHashnodePostsBySlug(params.slug);
 
   if (!post) {
-    return { notFound: true };
+    return { notFound: false };
   }
-
-  // @ts-ignore
-  const { html, tweetIDs, readingTime } = await mdxToHtml(post.content);
-  const tweets = await getTweets(tweetIDs);
 
   return {
     props: {
-      post: {
-        ...post,
-        content: html,
-        tweets,
-        readingTime
-      }
+      post,
     }
   };
 };
 
-export default PostPage;
+export async function getStaticPaths() {
+  // Fetch the slugs for all available posts
+  const posts = await fetchAllPostSlugs(); // Implement this function to fetch the post slugs
+  console.log(`fetchAllPostSlugs ${fetchAllPostSlugs}`)
+
+  // Generate an array of paths based on the fetched slugs
+  const paths = posts.map((slug: string) => ({
+    params: { slug },
+  }));
+
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+
+

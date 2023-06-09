@@ -1,21 +1,24 @@
+
 import Image from 'next/image';
 import { parseISO, format } from 'date-fns';
 import { PropsWithChildren, Suspense } from 'react';
-
 import Container from 'components/Container';
 import ViewCounter from 'components/ViewCounter';
-import { Post } from 'lib/types';
+import { Post } from 'types/posts';
 
 const BlogLayout = ({
-  children,
   post
 }: PropsWithChildren<{ post: Post }>) => {
+
+  const createPostContent = () => {
+    return post.content;
+  }
   return (
     <Container
       title={`${post.title} – Prince Shammah`}
       description={post.excerpt}
       image={post.coverImage}
-      date={new Date(post.date).toISOString()}
+      date={new Date(post.dateAdded).toISOString()}
       type="article"
     >
       <article className="flex flex-col items-start justify-center w-full max-w-2xl mx-auto mb-16">
@@ -29,25 +32,25 @@ const BlogLayout = ({
               height={24}
               width={24}
               sizes="20vw"
-              src="/avatar.jpg"
+              src="/xyrus.png"
               className="rounded-full"
             />
             <p className="ml-2 text-sm text-gray-700 dark:text-gray-300">
               {'Prince Shammah / '}
-              {format(parseISO(post.date), 'MMMM dd, yyyy')}
+              {format(parseISO(post.dateAdded), 'MMMM dd, yyyy')}
             </p>
           </div>
           <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 min-w-32 md:mt-0">
-            {post.readingTime}
-            {` • `}
-            <ViewCounter slug={post.slug} />
+            {/* {post.readingTime}
+            {` • `} */}
+            <ViewCounter count={post.totalReactions}/>
           </p>
         </div>
         <Suspense fallback={null}>
           <div className="w-full mt-4 prose dark:prose-dark max-w-none">
-            {children}
+  <div dangerouslySetInnerHTML={{__html: post.content}} id='content'/>
           </div>
-          <div className="text-sm text-gray-700 dark:text-gray-300">
+          {/* <div className="text-sm text-gray-700 dark:text-gray-300">
             <a
               href={`https://mobile.twitter.com/search?q=${encodeURIComponent(
                 `https://xyruscode.com/blog/${post.slug}`
@@ -59,13 +62,13 @@ const BlogLayout = ({
             </a>
             {` • `}
             <a
-              href="https://github.com/leerob/xyruscode.com/issues"
+              href="https://github.com/xyruscode.com/issues"
               target="_blank"
               rel="noopener noreferrer"
             >
               {'Suggest Change'}
             </a>
-          </div>
+          </div> */}
         </Suspense>
       </article>
     </Container>

@@ -2,7 +2,7 @@ import { MDXRemote } from 'next-mdx-remote';
 import SnippetLayout from 'layouts/snippets';
 import components from 'components/MDXComponents';
 // import { snippetsQuery, snippetSlugsQuery } from 'lib/queries';
-import { mdxToHtml } from 'lib/mdx';
+// import { mdxToHtml } from 'lib/mdx';
 import { Snippet } from 'lib/types';
 
 const SnippetsPage = ({ snippet }: { snippet: Snippet }) =>  {
@@ -11,6 +11,12 @@ const SnippetsPage = ({ snippet }: { snippet: Snippet }) =>  {
       <MDXRemote {...snippet.content} components={components} />
     </SnippetLayout>
   );
+}
+
+type Params = {
+  params: {
+    slug: string
+  }
 }
 
 export const getStaticPaths = async () => {

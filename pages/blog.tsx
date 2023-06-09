@@ -1,16 +1,20 @@
 import { Suspense, useState } from 'react';
-
 import Container from 'components/Container';
 import BlogPost from 'components/BlogPost';
-import { InferGetStaticPropsType } from 'next';
-import { indexQuery } from 'lib/queries';
-import { Post } from 'lib/types';
+import { getHashnodePosts } from 'lib/queries';
+import type { Post } from 'types/posts';
+
+type Props = {
+  posts: Post[]
+};
 
 const Blog = ({
   posts
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+}: Props) => {
   const [searchValue, setSearchValue] = useState('');
-  const filteredBlogPosts = posts.filter((post) =>
+
+  const filteredBlogPosts = [].filter((post) =>
+  // @ts-ignore
     post.title.toLowerCase().includes(searchValue.toLowerCase())
   );
 
@@ -24,7 +28,7 @@ const Blog = ({
           Blog
         </h1>
         <p className="mb-4 text-gray-600 dark:text-gray-400">
-          {`I've been writing online since 2014, mostly about web development and tech careers.
+          {`I've been writing online since 2021, mostly about web development.
             In total, I've written ${posts.length} articles on my blog.
             Use the search below to filter by title.`}
         </p>
@@ -56,38 +60,36 @@ const Blog = ({
             <h3 className="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
               Most Popular
             </h3>
+            {!posts.length && (
+            <p className="mb-4 text-gray-600 dark:text-gray-400">
+              No posts found.
+            </p>
+          )}
+          {posts.map((post) => (
             <BlogPost
-              title="Rust Is The Future of JavaScript Infrastructure"
-              excerpt="Why is Rust being used to replace parts of the JavaScript web ecosystem like minification (Terser), transpilation (Babel), formatting (Prettier), bundling (webpack), linting (ESLint), and more?"
-              slug="rust"
+              key={post.title}
+              slug={post.slug}
+              title={post.title}
+              brief={post.brief}
             />
-            <BlogPost
-              title="Everything I Know About Style Guides, Design Systems, and Component Libraries"
-              excerpt="A deep-dive on everything I've learned in the past year building style guides, design systems, component libraries, and their best practices."
-              slug="style-guides-component-libraries-design-systems"
-            />
-            <BlogPost
-              title="Building a Design System Monorepo with Turborepo"
-              excerpt="Manage multiple packages with a shared build, test, and release process using Turborepo, Changesets, Storybook, and more."
-              slug="turborepo-design-system-monorepo"
-            />
+          ))}
           </>
         )}
         <Suspense fallback={null}>
           <h3 className="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
             All Posts
           </h3>
-          {!filteredBlogPosts.length && (
+          {!posts.length && (
             <p className="mb-4 text-gray-600 dark:text-gray-400">
               No posts found.
             </p>
           )}
-          {filteredBlogPosts.map((post) => (
+          {posts.map((post) => (
             <BlogPost
               key={post.title}
               slug={post.slug}
               title={post.title}
-              excerpt={post.excerpt}
+              brief={post.brief}
             />
           ))}
         </Suspense>
@@ -98,8 +100,12 @@ const Blog = ({
 
 export default Blog;
 
-export const getStaticProps = async ({ preview = false }) => {
-  const posts: Post[] = [];
+export async function getStaticProps() {
+  const posts = await getHashnodePosts();
 
-  return { props: { posts } };
-}
+  return {
+    props: {
+      posts,
+    },
+  }
+};

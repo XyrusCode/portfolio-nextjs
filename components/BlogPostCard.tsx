@@ -5,14 +5,16 @@ import cn from 'classnames';
 import fetcher from 'lib/fetcher';
 import { Views } from 'lib/types';
 type Props ={
+  _id: string;
     title: string;
     slug: string;
-    gradient: string;
+    gradient?: string;
+    totalReactions: string;
 }
 
-const BlogPostCard = ({ title, slug, gradient }: Props) => {
-  const { data } = useSWR<Views>(`/api/views/${slug}`, fetcher);
-  const views = data?.total;
+const BlogPostCard = ({ _id, title, slug, gradient, totalReactions }: Props) => {
+  // const { data } = useSWR<Views>(`/api/views/${slug}`, fetcher);
+  // const views = data?.total;
 
   return (
     <Link
@@ -51,7 +53,7 @@ const BlogPostCard = ({ title, slug, gradient }: Props) => {
             />
           </svg>
           <span className="ml-2 align-baseline capsize">
-            {views ? new Number(views).toLocaleString() : '–––'}
+            {totalReactions ? new Number(totalReactions).toLocaleString() : '–––'}
           </span>
         </div>
       </div>
