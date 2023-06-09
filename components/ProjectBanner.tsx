@@ -45,7 +45,7 @@ const ProjectBanner = ({ title, description, imgSrc, href }: any) => {
           <Link
             href={href}
             target='new-tab'
-            className="text-base font-medium leading-6 text-black hover:text-green dark:hover:text-gray-400"
+            className="text-base font-medium leading-6 text-black dark:text-white hover:text-green dark:hover:text-gray-400"
             aria-label={`Link to ${title}`}
           >
             Learn more &rarr;
