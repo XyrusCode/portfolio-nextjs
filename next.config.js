@@ -28,7 +28,7 @@ const nextConfig = {
     runtimeCaching: [
       {
         urlPattern: /^https?.*/,
-        handler: 'NetworkFirst',
+        handler:  'NetworkFirst',
         options: {
           cacheName: 'offlineCache',
           expiration: {
@@ -67,6 +67,7 @@ img-src * blob: data:;
 media-src 'none';
 connect-src *;
 font-src 'self';
+frame-src 'self' figma.com;
 `;
 
 const securityHeaders = [
