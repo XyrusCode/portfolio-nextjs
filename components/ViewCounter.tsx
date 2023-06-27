@@ -16,7 +16,7 @@ const ViewCounter = ({ slug, isCard }: Props) => {
 
 
   useEffect(() => {
-    if(isCard){
+    if(!isCard){
     const registerView = () =>
       fetch(`/api/views/${slug}`, {
         method: 'POST'
