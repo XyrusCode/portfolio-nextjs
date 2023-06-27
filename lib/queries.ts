@@ -21,6 +21,7 @@ export async function getHashnodePosts() {
               title
               brief
               totalReactions
+              popularity
             }
           }
         }
@@ -55,6 +56,7 @@ export const getHashnodePostsBySlug = async (slug: string) => {
           replyCount
           totalReactions
           content
+          popularity
         }
       }
       `,

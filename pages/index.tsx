@@ -54,11 +54,12 @@ const Home = ({posts}: Props) => {
     key={post._id}
     title={post.title}
     slug={post.slug}
-    totalReactions={post.totalReactions}
+    popularity={post.totalReactions}
     gradient="from-[#D8B4FE] to-[#818CF8]"
     />
   )
 })}
+
 
 
           {/* <div className="flex gap-6 flex-row md:flex-row">

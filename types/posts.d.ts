@@ -12,4 +12,5 @@ export type Post = {
     slug: string;
     totalReactions: string;
     brief: string;
+    popularity: string;
 }

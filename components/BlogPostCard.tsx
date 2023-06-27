@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import useSWR from 'swr';
 import cn from 'classnames';
+import ViewCounter from './ViewCounter';
 
 import fetcher from 'lib/fetcher';
 import { Views } from 'lib/types';
@@ -9,10 +10,10 @@ type Props ={
     title: string;
     slug: string;
     gradient?: string;
-    totalReactions: string;
+    popularity: string;
 }
 
-const BlogPostCard = ({ _id, title, slug, gradient, totalReactions }: Props) => {
+const BlogPostCard = ({ _id, title, slug, gradient, popularity }: Props) => {
   // const { data } = useSWR<Views>(`/api/views/${slug}`, fetcher);
   // const views = data?.total;
 
@@ -52,9 +53,7 @@ const BlogPostCard = ({ _id, title, slug, gradient, totalReactions }: Props) => 
               d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
             />
           </svg>
-          <span className="ml-2 align-baseline capsize">
-            {totalReactions ? new Number(totalReactions).toLocaleString() : '–––'}
-          </span>
+          <ViewCounter isCard slug={slug}/>
         </div>
       </div>
     </Link>

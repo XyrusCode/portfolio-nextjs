@@ -1,22 +1,31 @@
-// import { useEffect } from 'react';
-// import useSWR from 'swr';
+import { useEffect } from 'react';
+import useSWR from 'swr';
 
-// import fetcher from 'lib/fetcher';
+import fetcher from 'lib/fetcher';
 import { Views } from 'lib/types';
 
-const ViewCounter = ({ count }: any) => {
-  // const { data } = useSWR<Views>(`/api/views/${slug}`, fetcher);
 
-  // useEffect(() => {
-  //   const registerView = () =>
-  //     fetch(`/api/views/${slug}`, {
-  //       method: 'POST'
-  //     });
+type Props = {
+  slug: string;
+  isCard: boolean;
+};
 
-  //   registerView();
-  // }, [slug]);
+const ViewCounter = ({ slug, isCard }: Props) => {
+  const { data } = useSWR<Views>(`/api/views/${slug}`, fetcher);
+  const views = new Number(data?.total);
 
-  return <span>{`${count! > 0 ? count.toLocaleString() : '–––'} views`}</span>;
+
+  useEffect(() => {
+    if(isCard){
+    const registerView = () =>
+      fetch(`/api/views/${slug}`, {
+        method: 'POST'
+      });
+
+    registerView();}
+  }, [isCard, slug]);
+
+  return <span>{`${data?.total! > 0 ? data?.total.toLocaleString() : '–––'} views`}</span>;
 };
 
 export default ViewCounter;

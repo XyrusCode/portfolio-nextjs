@@ -40,3 +40,6 @@ async function getCurrentlyPlayingSong(accessToken: string): Promise<SpotifyTrac
     return null;
   }
 }
+
+
+

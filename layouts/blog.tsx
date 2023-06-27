@@ -43,7 +43,7 @@ const BlogLayout = ({
           <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 min-w-32 md:mt-0">
             {/* {post.readingTime}
             {` • `} */}
-            <ViewCounter count={post.totalReactions}/>
+            <ViewCounter isCard={false} slug={post.slug}/>
           </p>
         </div>
         <Suspense fallback={null}>
