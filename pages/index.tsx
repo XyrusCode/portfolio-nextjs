@@ -46,7 +46,7 @@ const Home = ({posts}: Props) => {
           <h3 className="pt-7 font-bold text-2xl md:text-4xl tracking-tight mb-6 text-black dark:text-white">
             Recent Posts
           </h3>
-
+          <div className="flex gap-6 flex-row md:flex-row">
           {posts.map((post) => {
   return (
     <BlogPostCard 
@@ -59,8 +59,7 @@ const Home = ({posts}: Props) => {
     />
   )
 })}
-
-
+          </div>
 
           {/* <div className="flex gap-6 flex-row md:flex-row">
             <ProjectCard

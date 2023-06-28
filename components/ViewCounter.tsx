@@ -13,17 +13,18 @@ type Props = {
 const ViewCounter = ({ slug, isCard }: Props) => {
   const { data } = useSWR<Views>(`/api/views/${slug}`, fetcher);
   const views = new Number(data?.total);
+  const shouldCount = process.env.NODE_ENV == 'production' && !isCard;
 
 
   useEffect(() => {
-    if(!isCard){
+    if(shouldCount){
     const registerView = () =>
       fetch(`/api/views/${slug}`, {
         method: 'POST'
       });
 
     registerView();}
-  }, [isCard, slug]);
+  }, [shouldCount, slug]);
 
   return <span>{`${data?.total! > 0 ? data?.total.toLocaleString() : '–––'} views`}</span>;
 };
