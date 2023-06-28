@@ -3,7 +3,7 @@ import { indexQuery } from 'lib/queries';
 
 export const getServerSideProps = async({ res }: any) => {
   const feed = new RSS({
-    title: 'Prince Shammah',
+    title: 'Xyrus Code',
     site_url: 'https://xyruscode.com.ng',
     feed_url: 'https://xyruscode.com.ng/feed.xml'
   });

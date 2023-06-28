@@ -15,7 +15,7 @@ const BlogLayout = ({
   }
   return (
     <Container
-      title={`${post.title} – Prince Shammah`}
+      title={`${post.title} – Xyrus Code`}
       description={post.excerpt}
       image={post.coverImage}
       date={new Date(post.dateAdded).toISOString()}

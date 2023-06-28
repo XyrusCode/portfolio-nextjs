@@ -5,7 +5,7 @@ import { getTweets } from 'lib/twitter';
 const Tweets = () => {
   return (
     <Container
-      title="Tweets – Prince Shammah"
+      title="Tweets – Xyrus Code"
       description="A collection of tweets that inspire me, make me laugh, and make me think."
     >
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">

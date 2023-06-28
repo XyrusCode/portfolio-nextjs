@@ -4,7 +4,7 @@ import Image from 'next/image';
 const Uses = () => {
   return (
     <Container
-      title="Uses – Prince Shammah"
+      title="Uses – Xyrus Code"
       description="Here's what tech I'm currently using for coding, videos, and music."
     >
       <article className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
