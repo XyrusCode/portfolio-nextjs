@@ -3,10 +3,13 @@ import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
 import NextLink from 'next/link';
+import Script from 'next/script';
 import cn from 'classnames';
 
 import Footer from 'components/Footer';
 import MobileMenu from 'components/MobileMenu';
+// import CookieModal from 'components/CookieModal';
+
 type Props ={
     href: string,
     text: string
@@ -33,10 +36,19 @@ function NavItem({ href, text }: Props) {
 
 const Container = (props: any) => {
   const [mounted, setMounted] = useState(false);
+  // const [cookiesOpen, setCookiesOpen] = useState<boolean>(false);
   const { resolvedTheme, setTheme } = useTheme();
 
   // After mounting, we have access to the theme
-  useEffect(() => setMounted(true), []);
+  useEffect(() =>
+  setMounted(true), []);
+
+  // useEffect(() => {
+  //   setCookiesOpen(true)
+  // }
+  //   ,[mounted]
+  // );
+
 
   const { children, ...customMeta } = props;
   const router = useRouter();
@@ -70,6 +82,9 @@ const Container = (props: any) => {
           <meta property="article:published_time" content={meta.date} />
         )}
       </Head>
+
+  <Script type="text/javascript" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/40141510.js"></Script>
+
       <div className="flex flex-col justify-center px-8">
         <nav className="flex items-center justify-between w-full relative max-w-2xl border-gray-200 dark:border-gray-700 mx-auto pt-8 pb-8 sm:pb-16  text-gray-900 bg-gray-50  dark:bg-gray-900 bg-opacity-60 dark:text-gray-100">
           <a href="#skip" className="skip-nav">
@@ -123,6 +138,10 @@ const Container = (props: any) => {
         id="skip"
         className="flex flex-col justify-center px-8 bg-gray-50 dark:bg-gray-900"
       >
+        {/* <CookieModal
+        open={cookiesOpen}
+        onAccept={(accepted) => handleCookies(accepted)}
+        */}
         {children}
         <Footer />
       </main>
