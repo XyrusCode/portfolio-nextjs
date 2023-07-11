@@ -7,6 +7,7 @@ import type { Post } from 'types/posts';
 import Container from '../components/Container';
 // import ProjectCard from '../components/ProjectCard';
 import BlogPostCard from '../components/BlogPostCard';
+// import TopTracks from '../components/TopTracks'
 
 type Props = {
   posts: Post[]
@@ -40,16 +41,16 @@ const Home = ({posts}: Props) => {
           </div>
 
           <p className="pt-5 font-bold text-lg md:text-3xl tracking-tight text-black dark:text-white">
-            Welcome to my site. It&apos;s under construction but ont like a brand new building but more like a complete building that&apos;s getting improvements. I&apos;m currently experimenting with a lot of stuff like Spotify and Hashnode&apos;s API for this so it might take a while. 
-            This runs on Next.js, is being deployed from Vercel and served via Cloudflare. 
+            Welcome to my site. I&apos;m adding new features to it everyday so don&apos;t worry if it looks different when next you visit. I&apos;m currently experimenting with a lot of stuff like Spotify and Hashnode&apos;s API for this so it might take a while.
+            This runs on Next.js, is being deployed from Vercel and served via Cloudflare.
           </p>
           <h3 className="pt-7 font-bold text-2xl md:text-4xl tracking-tight mb-6 text-black dark:text-white">
             Recent Posts
           </h3>
-          <div className="flex gap-6 flex-row md:flex-row">
+          <div className="mx-auto sm:flex grid justify-items-center lg:grid-cols-3 sm:grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none ">
           {posts.map((post) => {
   return (
-    <BlogPostCard 
+    <BlogPostCard
     _id={post._id}
     key={post._id}
     title={post.title}
@@ -97,7 +98,7 @@ const Home = ({posts}: Props) => {
               </svg>
             </>
           </Link>
-         
+
         </div>
       </Container>
     </Suspense>
