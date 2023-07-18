@@ -8,7 +8,7 @@ import cn from 'classnames';
 
 import Footer from 'components/Footer';
 import MobileMenu from 'components/MobileMenu';
-// import CookieModal from 'components/CookieModal';
+import ScrollToTopButtom from './ScrollToTop';
 
 type Props ={
     href: string,
@@ -83,7 +83,7 @@ const Container = (props: any) => {
         )}
       </Head>
 
-  <Script type="text/javascript" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/40141510.js"></Script>
+      <Script type="text/javascript" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/40141510.js"></Script>
 
       <div className="flex flex-col justify-center px-8">
 
@@ -96,7 +96,6 @@ const Container = (props: any) => {
             <NavItem href="/" text="Home" />
             <NavItem href="/about" text="About" />
             <NavItem href="/projects" text="Projects" />
-            <NavItem href="https://showwcase.xyruscode.com.ng" text="Showwcase" />
             <NavItem href="https://blog.xyruscode.com.ng" text="Blog" />
           </div>
           <button
@@ -134,7 +133,7 @@ const Container = (props: any) => {
             )}
           </button>
         </nav>
-      </div>
+      S</div>
       <main
         id="skip"
         className="flex flex-col justify-center px-8 bg-gray-50 dark:bg-gray-900"
@@ -144,6 +143,7 @@ const Container = (props: any) => {
         onAccept={(accepted) => handleCookies(accepted)}
         */}
         {children}
+        <ScrollToTopButtom/>
         <Footer />
                 <div className="cf-turnstile" data-sitekey="0x4AAAAAAAG8QcXXX3_FjIrc" data-callback="javascriptCallback"></div>
       </main>

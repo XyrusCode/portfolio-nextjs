@@ -40,11 +40,13 @@ const Home = ({posts}: Props) => {
             </div>
           </div>
 
-          <p className="pt-5 font-bold text-lg md:text-3xl tracking-tight text-black dark:text-white">
-            Welcome to my site. I&apos;m adding new features to it everyday so don&apos;t worry if it looks different when next you visit. I&apos;m currently experimenting with a lot of stuff like Spotify and Hashnode&apos;s API for this so it might take a while.
+          <p className="pt-5 font-bold text-md md:text-3xl tracking-tight text-black dark:text-white">
+            Welcome to my site. I&apos;m a software developer based in Nigeria. I write about the code I write and the tech I use. I&apos;ll mostly be talking about how I built this site.
+          </p>
+            <p className="pt-5 font-bold text-md md:text-3xl tracking-tight text-black dark:text-white">
             This runs on Next.js, is being deployed from Vercel and served via Cloudflare.
           </p>
-          <h3 className="pt-7 font-bold text-2xl md:text-4xl tracking-tight mb-6 text-black dark:text-white">
+          <h3 className="pt-7 font-bold text-xl md:text-4xl tracking-tight mb-6 text-black dark:text-white">
             Recent Posts
           </h3>
           <div className="mx-auto sm:flex grid justify-items-center lg:grid-cols-3 sm:grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none ">
@@ -61,21 +63,6 @@ const Home = ({posts}: Props) => {
   )
 })}
           </div>
-
-          {/* <div className="flex gap-6 flex-row md:flex-row">
-            <ProjectCard
-              title="Xyrus&apos; Movie Database"
-              link="https://movie.xyruscode.com.ng"
-              gradient="from-[#D8B4FE] to-[#818CF8]"
-              image={"/projects/xmdb.png"}
-            />
-            <ProjectCard
-              title="Xyrus&apos; Music"
-              link="https://movie.xyruscode.com.ng"
-              gradient="from-[#D8B4FE] to-[#818CF8]"
-              image={"/projects/xmdb.png"}
-            />
-          </div> */}
           <Link
             href="/projects"
             className="flex items-center mt-8 text-gray-600 dark:text-gray-400 leading-7 rounded-lg hover:text-gray-800 dark:hover:text-gray-200 transition-all h-6"

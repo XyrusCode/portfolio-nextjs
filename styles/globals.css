@@ -214,3 +214,38 @@ table {
 .prose .callout > p {
   margin: 0 !important;
 }
+
+.scroll-top {
+  width: 45px;
+  height: 45px;
+  background: #007cde;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: #fff;
+  border-radius: 5px;
+  position: fixed;
+  bottom: 30px;
+  right: 10px;
+  z-index: 9;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+}
+
+/* Make scroll to top smaller on mobile */
+@media (max-width: 768px) {
+  .scroll-top {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+}
+
+.grecaptcha-badge {
+  visibility: hidden;
+}

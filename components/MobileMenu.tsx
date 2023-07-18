@@ -75,14 +75,6 @@ const MobileMenu = () => {
           </li>
           <li
             className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
-            style={{ transitionDelay: '200ms' }}
-          >
-            <Link href="https://showwcase.xyruscode.com.ng" className="flex w-auto pb-4">
-              Showwcase
-            </Link>
-          </li>
-          <li
-            className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
             style={{ transitionDelay: '250ms' }}
           >
             <Link href="https://blog.xyruscode.com.ng" className="flex w-auto pb-4">

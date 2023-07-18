@@ -1,25 +1,27 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import { ThemeProvider } from "next-themes";
-// import { ApolloProvider } from '@apollo/client'
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import { Inter } from '@next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 
 const interVariable = Inter();
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
-  // const apolloClient = useApollo(pageProps.initialApolloState)
 
   return(
     <ThemeProvider defaultTheme="dark" attribute="class">
-      {/* <ApolloProvider client={apolloClient}> */}
+        <GoogleReCaptchaProvider
+            reCaptchaKey="6LeDfysnAAAAAOdSNm-4Ltvr7NnCVHzZilX3pSIq"
+            // useEnterprise=true
+  >
      <main className={interVariable.className}>
      <Component {...pageProps} />
      <Analytics />
      </main>
-     {/* </ApolloProvider> */}
+     </GoogleReCaptchaProvider>
   </ThemeProvider>
-  ) 
+  )
 };
 
 export default MyApp;

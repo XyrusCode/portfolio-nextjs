@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from 'next/document';
 
 const Document = (props: any ) => {
   return (
-    <Html lang="en">
+    <Html lang="en" className='scroll-smooth'>
       <Head>
         <link href="/static/favicons/favicon.ico" rel="shortcut icon" />
         <link href="/static/favicons/site.webmanifest" rel="manifest" />
