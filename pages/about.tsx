@@ -45,7 +45,7 @@ const About = () => {
           <h3>Stuff About me</h3>
           <p>
           I&apos;m a Freelance Web Developer based in Nigeria. I spent four years in the university to get a B.S. in
-            Computer Science and then went to Youtube to learn how to code. I&apos;m a self-taught developer. I&apos;ve been coding for about {getCodingAge()} years now. I&apos;m currently learning about DevOps and Cloud Computing. I&apos;m also learning about Machine Learning and AI. I&apos;m also learning about UI/UX design.
+            Computer Science and then went to Youtube to learn how to code. I&apos;m a self-taught developer. I&apos;ve been coding for about {getCodingAge()} years now. I&apos;m currently learning more  about DevOps and Cloud Computing while also  getting into UI/UX design. I&apos;m also a big fan of open source software and I&apos;m currently working on a few projects of my own. 
           </p>
           </div>
 
@@ -89,6 +89,9 @@ const About = () => {
               </li>
               <li>
                 MongoDB
+              </li>
+              <li>
+                Laravel Eloquent
               </li>
               <li>
                 GraphQL
