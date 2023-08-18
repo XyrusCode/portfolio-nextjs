@@ -1,9 +1,11 @@
 
 import Image from 'next/image';
+import Script from 'next/script';
 import { parseISO, format } from 'date-fns';
 import { PropsWithChildren, Suspense } from 'react';
 import Container from 'components/Container';
 import ViewCounter from 'components/ViewCounter';
+import DisqusComments from 'components/DisqusComments'; 
 import { Post } from 'types/posts';
 
 const BlogLayout = ({
@@ -50,6 +52,13 @@ const BlogLayout = ({
           <div className="w-full mt-4 prose dark:prose-dark max-w-none">
   <div dangerouslySetInnerHTML={{__html: post.content}} id='content'/>
           </div>
+          <div id="disqus_thread"></div>
+          <DisqusComments
+              pageUrl={`https://xyruscode.com.ng/blog/${post.slug}`} // Adjust the URL
+              pageIdentifier={post.slug} // Use a unique identifier, e.g., post ID
+            />
+
+
           {/* <div className="text-sm text-gray-700 dark:text-gray-300">
             <a
               href={`https://mobile.twitter.com/search?q=${encodeURIComponent(

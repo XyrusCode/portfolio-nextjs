@@ -12,6 +12,7 @@ const nextConfig = {
       'i.scdn.co', // Spotify Album Art
       'pbs.twimg.com', // Twitter Profile Picture
       'cdn.hashnode.com', // Hashnode Images
+      'apod.nasa.gov', // NASA APOD
       
     ]
   },
@@ -61,14 +62,15 @@ module.exports = withOffline(nextConfig);
 // https://nextjs.org/docs/advanced-features/security-headers
 const ContentSecurityPolicy = `
 default-src 'self' vercel.live;
-script-src 'self' 'unsafe-eval' 'unsafe-inline' cdn.vercel-insights.com vercel.live;
-style-src 'self' 'unsafe-inline';
+script-src 'self' 'unsafe-eval' 'unsafe-inline' cdn.vercel-insights.com vercel.live js-na1.hs-scripts.com xyrus-code.disqus.com c.disquscdn.com google.com gstatic.com js.hs-banner.com js.hs-analytics.net js.hs-scripts.com js.hsadspixel.net js.usemessages.com js.hscollectedforms.net js.hsleadflows.net js.hsforms.net js.hs-analytics.net js.hs-scripts.com js.hs-banner.com js.hscollectedforms.net js.hs-analytics.net js.hs-scripts.com js.hs-banner.com js.hs-analytics.net launchpad-wrapper.privacymanager.io;
+style-src 'self' 'unsafe-inline' c.disquscdn.com;
 img-src * blob: data:;
 media-src 'none';
 connect-src *;
 font-src 'self';
-frame-src 'self' figma.com;
+frame-src 'self' figma.com disqus.com app.hubspot.com;
 `;
+
 
 const securityHeaders = [
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
