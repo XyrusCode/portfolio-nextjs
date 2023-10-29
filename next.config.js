@@ -62,8 +62,8 @@ module.exports = withOffline(nextConfig);
 // https://nextjs.org/docs/advanced-features/security-headers
 const ContentSecurityPolicy = `
 default-src 'self' vercel.live;
-script-src 'self' 'unsafe-eval' 'unsafe-inline' cdn.vercel-insights.com vercel.live js-na1.hs-scripts.com xyrus-code.disqus.com c.disquscdn.com google.com gstatic.com js.hs-banner.com js.hs-analytics.net js.hs-scripts.com js.hsadspixel.net js.usemessages.com js.hscollectedforms.net js.hsleadflows.net js.hsforms.net js.hs-analytics.net js.hs-scripts.com js.hs-banner.com js.hscollectedforms.net js.hs-analytics.net js.hs-scripts.com js.hs-banner.com js.hs-analytics.net launchpad-wrapper.privacymanager.io;
-style-src 'self' 'unsafe-inline' c.disquscdn.com;
+script-src 'self' 'unsafe-eval' 'unsafe-inline' cdn.vercel-insights.com vercel.live js-na1.hs-scripts.com xyrus-code.disqus.com c.disquscdn.com google.com gstatic.com js.hs-banner.com js.hs-analytics.net js.hs-scripts.com js.hsadspixel.net js.usemessages.com js.hscollectedforms.net js.hsleadflows.net js.hsforms.net js.hs-analytics.net js.hs-scripts.com js.hs-banner.com js.hscollectedforms.net js.hs-analytics.net js.hs-scripts.com js.hs-banner.com js.hs-analytics.net launchpad-wrapper.privacymanager.io launchpad.privacymanager.io/latest;
+style-src 'self' 'unsafe-inline' c.disquscdn.com; www.google.com/recaptcha
 img-src * blob: data:;
 media-src 'none';
 connect-src *;
