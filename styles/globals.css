@@ -249,3 +249,8 @@ table {
 .grecaptcha-badge {
   visibility: hidden;
 }
+
+.disqus-comments {
+  width: -webkit-fill-available;
+  border-radius: 0.5rem;
+}

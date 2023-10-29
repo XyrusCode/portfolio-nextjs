@@ -52,7 +52,6 @@ const BlogLayout = ({
           <div className="w-full mt-4 prose dark:prose-dark max-w-none">
   <div dangerouslySetInnerHTML={{__html: post.content}} id='content'/>
           </div>
-          <div id="disqus_thread"></div>
           <DisqusComments
               pageUrl={`https://xyruscode.com.ng/blog/${post.slug}`} // Adjust the URL
               pageIdentifier={post.slug} // Use a unique identifier, e.g., post ID
@@ -78,6 +77,7 @@ const BlogLayout = ({
               {'Suggest Change'}
             </a>
           </div> */}
+          <Script id="dsq-count-scr" src="//xyrus-code.disqus.com/count.js" async></Script>
         </Suspense>
       </article>
     </Container>

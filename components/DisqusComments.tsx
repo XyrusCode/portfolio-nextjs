@@ -9,10 +9,10 @@ const DisqusComments = ({ pageUrl, pageIdentifier }: DisqusCommentsProps) => {
     useEffect(() => {
         // Load Disqus script
         const d = document;
-        const s = d.createElement('script');
-        s.src = 'https://xyrus-code.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', String(+new Date()));
-        (d.head || d.body).appendChild(s);
+        const script = d.createElement('script');
+        script.src = 'https://xyrus-code.disqus.com/embed.js';
+        script.setAttribute('data-timestamp', String(+new Date()));
+        (d.head || d.body).appendChild(script);
       }, []);
     
       // Configure Disqus
@@ -27,8 +27,10 @@ const DisqusComments = ({ pageUrl, pageIdentifier }: DisqusCommentsProps) => {
       }, [pageUrl, pageIdentifier]);
     
       return (
-        <div className='rounded-lg'>
-          <div className='w-full rounded-lg' id="disqus_thread"></div>
+        <div className='align-center w-full'>
+          <div
+          className='w-full'
+           id="disqus_thread"></div>
           <noscript>
             Please enable JavaScript to view the{' '}
             <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
