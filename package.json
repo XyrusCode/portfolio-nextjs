@@ -59,6 +59,7 @@
     "vercel": "^30.2.3"
   },
   "devDependencies": {
+    "@types/js-cookie": "^3.0.5",
     "@types/node": "18.11.3",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
