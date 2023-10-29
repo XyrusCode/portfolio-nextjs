@@ -8,12 +8,6 @@ const projectsData = [
       imgSrc: '/projects/xmdb.PNG',
       href: 'https://movie.xyruscode.com.ng',
   },
-        {
-      title: 'Acachi LLC',
-      description: `A website for Acachi LLC, a company in the United States. Built with Next.js and Tailwind CSS, and is deployed on Vercel.`,
-      imgSrc: '/projects/acachi.png',
-      href: 'https://acachi-llc.vercel.app/',
-    },
     {
       title: 'First Class Barbers',
       description: `A website for a local barbershop in my hometown. Built with WordPress and Elementor.`,
