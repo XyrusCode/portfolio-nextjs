@@ -78,6 +78,7 @@ const Container = (props: any) => {
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
+        <meta name="google-adsense-account" content="ca-pub-4403997428648144"/>
         {meta.date && (
           <meta property="article:published_time" content={meta.date} />
         )}
