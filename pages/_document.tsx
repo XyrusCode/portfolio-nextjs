@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document';
+import Script from 'next/script';
 
 const Document = (props: any ) => {
   return (
@@ -43,6 +44,8 @@ const Document = (props: any ) => {
           content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"
           name="robots"
         />
+                <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4403997428648144"
+     crossOrigin="anonymous"/>
       </Head>
       <body className="bg-white dark:bg-black text-white dark:text-black">
         <Main />
