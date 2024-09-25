@@ -50,10 +50,14 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: '/service-worker.js',
-        destination: '/_next/static/service-worker.js',
+        source: "/ads.txt",
+        destination: "/api/ads.txt",
       },
-    ]
+      {
+        source: "/service-worker.js",
+        destination: "/_next/static/service-worker.js",
+      },
+    ];
   },
 }
 
